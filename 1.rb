@@ -17,5 +17,14 @@
 ## Решение:
 
 
+line = File.read('./data/1.txt').split('')
+floor = 0
 
-
+line.each do |f|
+  if f == "("
+    floor += 1
+  elsif f == ")"
+    floor -= 1
+  end
+end
+puts floor
