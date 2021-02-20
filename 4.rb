@@ -17,3 +17,15 @@
 ## Решение:
 
 
+
+
+
+raw = File.read('./data/4.txt').split("\n")
+
+res = raw.map do |row|
+  l, h, w = row.split("x").map(&:to_i).sort
+  2*l*w + 2*w*h + 2*h*l + l*h
+end.inject(0){|sum,x| sum + x }
+
+puts res
+
