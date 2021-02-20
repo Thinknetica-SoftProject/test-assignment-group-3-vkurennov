@@ -11,3 +11,6 @@
 ## Решение:
 
 
+line =  File.read('./data/3.txt').split("\n").map { |row| row.split("\t").map(&:to_i) }.flat_map { |row| [row.max - row.min] }.inject(0){|sum,x| sum + x }
+
+puts line
